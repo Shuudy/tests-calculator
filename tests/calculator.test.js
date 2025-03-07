@@ -24,6 +24,8 @@ describe("Calculator test", () => {
 
     it("should return { expression: '10 - 5', value: 5 } in history when given '10 - 5'", () => {
         const calculator = new Calculator();
-        expect(calculator.getHistory()[0]).toBe({ expression: '10 - 5', value: 5 });
+        calculator.calculate("10 - 5");
+
+        expect(calculator.getHistory()[0]).toEqual({ expression: '10 - 5', value: 5 });
     });
 });

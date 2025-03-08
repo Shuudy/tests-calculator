@@ -87,4 +87,14 @@ test.describe("Calculator test", () => {
         const display = page.locator(".display");
         await expect(display).toHaveText("4");
     });
+
+    test("should display history when 8, -, 4, and = buttons are clicked", async ({ page }) => {
+        await page.getByRole('button', { name: '8' }).click();
+        await page.getByRole('button', { name: '-' }).click();
+        await page.getByRole('button', { name: '4' }).click();
+        await page.getByRole('button', { name: '=' }).click();
+
+        const history = page.locator(".history ul li");
+        await expect(history).toHaveText("8-4 = 4");
+    });
 });

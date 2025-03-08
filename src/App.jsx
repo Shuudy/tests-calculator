@@ -10,6 +10,11 @@ function App() {
             setInput("0");
             return;
         }
+
+        if (value === "C") {
+            setInput("0");
+            return;
+        }
     };
 
     return (

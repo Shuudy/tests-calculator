@@ -103,9 +103,9 @@ test.describe("Calculator test", () => {
         await page.getByRole('button', { name: '-' }).click();
         await page.getByRole('button', { name: '4' }).click();
         await page.getByRole('button', { name: '=' }).click();
-        await page.getByRole('button', { name: 'C' }).click();
+        await page.getByRole('button', { name: 'C', exact: true }).click();
 
         const history = page.locator(".history ul li");
-        await expect(history).toBeEmpty();
+        await expect(history).toHaveCount(0);
     });
 });

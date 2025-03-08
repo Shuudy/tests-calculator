@@ -28,4 +28,12 @@ describe("Calculator test", () => {
 
         expect(calculator.getHistory()[0]).toEqual({ expression: '10 - 5', value: 5 });
     });
+
+    it("should return empty history when clearHistory is called", () => {
+        const calculator = new Calculator();
+        calculator.calculate("10 - 9");
+        calculator.clearHistory();
+
+        expect(calculator.getHistory()).toEqual([]);
+    });
 });

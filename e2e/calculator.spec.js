@@ -16,4 +16,11 @@ test.describe("Calculator test", () => {
         const display = page.locator(".display");
         await expect(display).toHaveText("0");
     });
+
+    test("should clear input when C button is clicked", async ({ page }) => {
+        await page.click("text=C");
+
+        const display = page.locator(".display");
+        await expect(display).toHaveText("0");
+    });
 });

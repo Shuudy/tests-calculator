@@ -17,6 +17,8 @@ function App() {
 
         if (value === "C") {
             setInput("0");
+            setHistory([]);
+            calculatorRef.current.clearHistory();
             return;
         }
 

@@ -15,6 +15,10 @@ function App() {
             setInput("0");
             return;
         }
+
+        setInput((prevInput) =>
+            prevInput === "0" ? value : prevInput + value
+        );
     };
 
     return (

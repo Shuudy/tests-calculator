@@ -23,4 +23,11 @@ test.describe("Calculator test", () => {
         const display = page.locator(".display");
         await expect(display).toHaveText("0");
     });
+
+    test("should display 1 when 1 button is clicked", async ({ page }) => {
+        await page.click("text=1");
+
+        const display = page.locator(".display");
+        await expect(display).toHaveText("1");
+    });
 });

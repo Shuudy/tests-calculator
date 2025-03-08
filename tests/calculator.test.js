@@ -44,4 +44,8 @@ describe("Calculator test", () => {
 
         expect(calculator.getHistory()).toEqual([]);
     });
+
+    it("should return error when given unexpected end of input", () => {
+        expect(() => calculator.calculate("10 -")).toThrow("Unexpected end of input");
+    });
 });

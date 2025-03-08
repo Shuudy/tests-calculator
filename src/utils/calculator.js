@@ -12,4 +12,8 @@ export class Calculator {
     getHistory() {
         return this.history;
     }
+
+    clearHistory() {
+        this.history = [];
+    }
 }

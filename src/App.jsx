@@ -1,7 +1,7 @@
 import ButtonPanel from "./components/ButtonPanel";
 import Display from "./components/Display";
 import { useState, useRef } from "react";
-import { Calculator } from "./utils/Calculator";
+import { Calculator } from "./utils/calculator.js";
 import History from "./components/History";
 
 function App() {

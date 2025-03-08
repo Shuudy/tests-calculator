@@ -67,4 +67,24 @@ test.describe("Calculator test", () => {
         const display = page.locator(".display");
         await expect(display).toHaveText("2");
     });
+
+    test("should display 48 when 8, *, 6, and = buttons are clicked", async ({ page }) => {
+        await page.getByRole('button', { name: '8' }).click();
+        await page.getByRole('button', { name: '*' }).click();
+        await page.getByRole('button', { name: '6' }).click();
+        await page.getByRole('button', { name: '=' }).click();
+
+        const display = page.locator(".display");
+        await expect(display).toHaveText("48");
+    });
+
+    test("should display 4 when 8, -, 4, and = buttons are clicked", async ({ page }) => {
+        await page.getByRole('button', { name: '8' }).click();
+        await page.getByRole('button', { name: '-' }).click();
+        await page.getByRole('button', { name: '4' }).click();
+        await page.getByRole('button', { name: '=' }).click();
+
+        const display = page.locator(".display");
+        await expect(display).toHaveText("4");
+    });
 });

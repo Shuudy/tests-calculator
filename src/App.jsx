@@ -34,11 +34,14 @@ function App() {
     };
 
     return (
-        <div className="max-w-xs mx-auto mt-10 shadow-lg rounded-lg overflow-hidden">
-            <Display input={input} />
-            <ButtonPanel onButtonClick={handleButtonClick} />
-            <History history={history} />
-        </div>
+        <>
+            <h1 className="text-center text-2xl font-bold my-4">Tests Calculator</h1>
+            <div className="max-w-xs mx-auto mt-10 shadow-lg rounded-lg overflow-hidden">            
+                <Display input={input} />
+                <ButtonPanel onButtonClick={handleButtonClick} />
+                <History history={history} />
+            </div>
+        </>
     );
 }
 

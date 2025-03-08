@@ -1,9 +1,11 @@
 import ButtonPanel from "./components/ButtonPanel";
 import Display from "./components/Display";
-import { useState } from "react";
+import { useState, useRef } from "react";
+import { Calculator } from "./utils/Calculator";
 
 function App() {
     const [input, setInput] = useState("0");
+    const calculatorRef = useRef(new Calculator());
 
     const handleButtonClick = (value) => {
         if (value === "CE") {
@@ -13,6 +15,11 @@ function App() {
 
         if (value === "C") {
             setInput("0");
+            return;
+        }
+
+        if (value === "=") {
+            setInput(calculatorRef.current.calculate(input).toString());
             return;
         }
 

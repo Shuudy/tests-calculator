@@ -6,7 +6,7 @@ export class Calculator {
     calculate(expression) {
         const result = eval(expression);
         this.history.push({ expression, value: result });
-        return eval(expression);
+        return result;
     }
 
     getHistory() {

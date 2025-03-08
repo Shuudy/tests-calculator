@@ -29,6 +29,15 @@ describe("Calculator test", () => {
         expect(calculator.getHistory()[0]).toEqual({ expression: '10 - 5', value: 5 });
     });
 
+    it("should return [ { expression: '10 - 5', value: 5 }, { expression: '29 * 4', value: 116 } ] in history when given '10 - 5' and '29 * 4", () => {
+        const calculator = new Calculator();
+        calculator.calculate("10 - 5");
+        calculator.calculate("29 * 4");
+
+        expect(calculator.getHistory()[0]).toEqual({ expression: '10 - 5', value: 5 });
+        expect(calculator.getHistory()[1]).toEqual({ expression: '29 * 4', value: 116 });
+    });
+
     it("should return empty history when clearHistory is called", () => {
         const calculator = new Calculator();
         calculator.calculate("10 - 9");

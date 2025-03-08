@@ -97,4 +97,15 @@ test.describe("Calculator test", () => {
         const history = page.locator(".history ul li");
         await expect(history).toHaveText("8-4 = 4");
     });
+
+    test("should clear history when C button is clicked", async ({ page }) => {
+        await page.getByRole('button', { name: '8' }).click();
+        await page.getByRole('button', { name: '-' }).click();
+        await page.getByRole('button', { name: '4' }).click();
+        await page.getByRole('button', { name: '=' }).click();
+        await page.getByRole('button', { name: 'C' }).click();
+
+        const history = page.locator(".history ul li");
+        await expect(history).toBeEmpty();
+    });
 });

@@ -9,4 +9,11 @@ test.describe("Calculator test", () => {
         const title = await page.title();
         expect(title).toBe("Tests Calculator");
     });
+
+    test("should clear input when CE button is clicked", async ({ page }) => {
+        await page.click("text=CE");
+
+        const display = page.locator(".display");
+        await expect(display).toHaveText("0");
+    });
 });

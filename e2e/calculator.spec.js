@@ -52,7 +52,7 @@ test.describe("Calculator test", () => {
     test("should display 0 when 1, -, and C buttons are clicked", async ({ page }) => {
         await page.click("text=1");
         await page.click("text=-");
-        await page.click("text=C");
+        page.getByRole('button', { name: 'C', exact: true }).click();
 
         const display = page.locator(".display");
         await expect(display).toHaveText("0");
